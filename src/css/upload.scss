@@ -1,0 +1,293 @@
+@import './mixin.scss';
+
+.swiper-slide {
+    @include background($bgColor: #fff);
+}
+
+#upload-form {
+    @include position($p: fixed, $b: 0, $l: 50%);
+    @include translate($tx: -50%, $ty: 400px);
+    @include WH($w: 540px, $h: 391px);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/step1/box.png),
+        $bgPosition: center
+    );
+    z-index: 2;
+    opacity: 0;
+
+    & #gallery-call {
+        @include WH($w: 480px, $h: 240px);
+        @include position($t: 40px, $l: 30px);
+        cursor: pointer;
+    }
+
+    & #upload-form-close {
+        @include WH($w: 480px, $h: 60px);
+        @include position($b: 30px, $l: 30px);
+        cursor: pointer;
+    }
+}
+
+#step-header {
+    @include WH($w: 540px, $h: 79px);
+    @include position($p: fixed, $t: 0, $l: 50%);
+    @include translate($tx: -50%);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/step_common/header.png),
+        $bgPosition: center
+    );
+    overflow: hidden;
+    z-index: 2;
+    margin-top: 60px;
+    display: none;
+
+    & #reload-page-step {
+        @include WH($w: 100px, $h: 60px);
+        @include position($p: absolute, $t: 0, $l: 0);
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    & .slideNext-btn {
+        @include WH($w: 100px, $h: 60px);
+        @include position($p: absolute, $t: 0, $r: 0);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgColor: transparent,
+            $bgImage: url(../src/images/step_common/next.png),
+            $bgPosition: center
+        );
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    & .slidePrev-btn {
+        @include WH($w: 100px, $h: 60px);
+        @include position($p: absolute, $t: 0, $l: 0);
+        cursor: pointer;
+    }
+
+    & #slidePrev-btn {
+        @include WH($w: 100px, $h: 60px);
+        @include position($p: absolute, $t: 0, $l: 0);
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    & #submit {
+        @include WH($w: 100px, $h: 60px);
+        @include position($p: absolute, $t: 0, $r: 0);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgColor: transparent,
+            $bgImage: url(../src/images/step_common/complete.png),
+            $bgPosition: center
+        );
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+canvas {
+    @include position($p: relative, $t: 0, $l: 50%);
+    @include translate($tx: -50%);
+}
+
+#big-thumb {
+    @include WH($w: 540px, $h: 100%);
+    @include position($p: relative, $t: 0px, $l: 0);
+    margin-top: 119px;
+    @include background($bgColor: #fff);
+}
+#small-thumb {
+    @include position($p: relative, $t: 0px, $l: 0);
+    @include WH($w: 540px, $h: 100%);
+    margin-top: 119px;
+    @include background($bgColor: #fff);
+}
+
+#reGallery-btn {
+    @include WH($w: 540px, $h: 86px);
+    @include position($p: relative, $t: 0, $r: 0);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/step2/re_choice.png),
+        $bgPosition: center
+    );
+    cursor: pointer;
+}
+#step2-shadow {
+    @include WH($w: 540px, $h: 28px);
+    @include position($p: absolute, $b: 2px, $r: 0);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/step2/shadow.png),
+        $bgPosition: center
+    );
+    z-index: 2;
+}
+
+.call-btn {
+    @include WH($w: 100px, $h: 50px);
+    @include position($t: 500px, $l: 50%);
+    @include translate($tx: -50%);
+    border: 1px solid #ccc;
+    @include background($bgColor: none);
+    z-index: 2;
+}
+
+#close-form {
+    @include position($t: 0, $l: 0);
+    @include WH($w: 200px, $h: 70px);
+    cursor: pointer;
+    z-index: 2;
+}
+
+#gallery {
+    display: none;
+}
+
+.slideNext-btn {
+    @include position($t: 0, $r: 0);
+    @include WH($w: 200px, $h: 70px);
+    cursor: pointer;
+}
+
+#user-info-wrap {
+    @include WH($w: 540px, $h: 592px);
+    @include position($p: relative, $t: 0, $r: 0);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/step3/default.png),
+        $bgPosition: center 0px
+    );
+    padding-bottom: 100px;
+
+    & .user-info {
+        @include WH($h: 44px);
+        @include position($l: 142px);
+        @include fontControl($fw: 500, $fs: 20px, $color: #303030);
+        letter-spacing: 3px;
+        line-height: 44px;
+        border: none;
+        background-color: transparent;
+        padding-left: 10px;
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: #b8b8b8;
+            @include fontControl($fs: 20px, $fw: 500);
+        }
+    }
+
+    & #name {
+        @include WH($w: 158px);
+        @include position($p: absolute, $t: 30px);
+        line-height: 44px;
+    }
+
+    & #birth {
+        @include WH($w: 198px);
+        @include position($p: absolute, $t: 87px);
+    }
+
+    & #phone {
+        @include WH($w: 228px);
+        @include position($p: absolute, $t: 143px);
+    }
+
+    & #subject {
+        @include WH($w: 346px);
+        @include position($p: absolute, $t: 199px);
+    }
+
+    & #content {
+        @include WH($w: 478px, $h: 278px);
+        @include position($p: absolute, $t: 273px, $l: 31px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/step3/guide_text.png),
+            $bgPosition: center
+        );
+        line-height: 30px;
+        padding: 20px;
+    }
+
+    & #content:focus {
+        background: none;
+    }
+}
+
+#complete {
+    @include WH($w: 540px, $h: 1110px);
+    @include position($p: absolute, $t: 0px, $l: 0px);
+    z-index: 2;
+
+    & #step5-header {
+        @include WH($w: 540px, $h: 540px);
+        @include position($p: relative, $t: 0px, $l: 0px);
+        @include background($bgColor: #00a0e9);
+
+        & #step5-air {
+            @include WH($w: 116px, $h: 76px);
+            @include position($t: 250px, $l: 50px);
+            opacity: 0;
+            @include background(
+                $bgImage: url(../src/images/step5/air.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+        }
+
+        & #step5-text {
+            @include WH($w: 265px, $h: 70px);
+            @include position($t: 280px, $l: 50%);
+            @include translate($tx: -50%, $ty: 30px);
+            opacity: 0;
+            @include background(
+                $bgImage: url(../src/images/step5/text.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+        }
+
+        & #step5-winner {
+            @include WH($w: 480px, $h: 95px);
+            @include position($t: 400px, $l: 50%);
+            @include translate($tx: -50%);
+            @include background(
+                $bgImage: url(../src/images/step5/winner.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+        }
+    }
+
+    & #step5-content {
+        @include WH($w: 540px, $h: 700px);
+        @include position($p: relative, $t: 0px, $l: 0px);
+        @include background(
+            $bgColor: #eee,
+            $bgImage: url(../src/images/step5/policy.png),
+            $bgPosition: center 60px,
+            $bgRepeat: no-repeat
+        );
+
+        & #reload-page {
+            @include WH($w: 540px, $h: 86px);
+            @include position($p: absolute, $b: 110px, $l: 0px);
+            @include background(
+                $bgImage: url(../src/images/step5/BT_back.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+            cursor: pointer;
+        }
+    }
+}

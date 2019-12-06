@@ -1,0 +1,94 @@
+@import './mixin.scss';
+
+#detail {
+    @include position($t: 0, $l: 50%);
+    @include translate($tx: -50%);
+    @include WH($w: 540px);
+    @include background($bgColor: #fff);
+    display: none;
+    box-sizing: border-box;
+
+    #close-detail {
+        @include WH($w: 200px, $h: 70px);
+        cursor: pointer;
+    }
+
+    #detail-in-upload-btn {
+        @include WH($w: 200px, $h: 70px);
+        cursor: pointer;
+    }
+
+    #bo_v {
+        margin-top: 60px;
+        #bo_v_info {
+            @include position($p: relative, $t: 0, $l: 0);
+            @include WH($w: 540px, $h: 468px);
+            @include background(
+                $bgImage: url(../src/images/status/bg.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+
+            color: #fff;
+
+            & #writer {
+                @include fontControl($fs: 20px, $fw: 400);
+                @include position($p: absolute, $t: 29px, $l: 130px);
+            }
+
+            & #write-day {
+                @include fontControl($fs: 20px, $fw: 400);
+                @include position($p: absolute, $t: 68px, $l: 130px);
+            }
+
+            & #bo_v_con {
+                @include WH($w: 440px, $h: 255px);
+                overflow: scroll;
+                -ms-overflow-style: none;
+
+                @include position($p: absolute, $t: 160px, $l: 50px);
+
+                & div p {
+                    @include fontControl($fs: 18px, $lh: 31px, $fw: 400);
+                    @include WH($w: 440px);
+                    overflow-wrap: break-word;
+                    word-break: break-all;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 0 !important;
+                }
+            }
+        }
+
+        #bo_v_img {
+            @include fontControl($textAlign: center);
+            @include background($bgColor: #00a0e9);
+            overflow: hidden;
+
+            & img {
+                @include WH($w: 540px);
+            }
+        }
+
+        #bo_v_bottom {
+            @include WH($w: 540px, $h: 150px);
+            @include background(
+                $bgColor: #f1f1f1,
+                $bgImage: url(../src/images/status/BT.png),
+                $bgPosition: center,
+                $bgRepeat: no-repeat
+            );
+            @include position($p: relative, $t: 0, $l: 0);
+
+            & #close-detail {
+                @include position($t: 40px, $l: 60px);
+                cursor: pointer;
+            }
+            & #detail-in-upload-btn {
+                @include position($t: 40px, $r: 60px);
+                cursor: pointer;
+            }
+        }
+    }
+}

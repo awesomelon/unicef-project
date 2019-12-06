@@ -1,0 +1,153 @@
+<!-- 방재호 v1.0 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=540,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+    <header id="header">
+        <div id="list-header">
+            <div id="close-list"></div>
+        </div>
+    </header>
+    <nav class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </nav>
+    <div id="wrapper">
+        <form method="POST" enctype="multipart/form-data" id="form">
+            <div class="swiper-container swiper-no-swiping">
+                <div id="step-header" class="step-header">
+                    <div id="step2-btns">
+                        <div id="reload-page-step"></div>
+                        <div class="slideNext-btn"></div>
+                    </div>
+                    <div id="step3-btns">
+                        <div id="slidePrev-btn"></div>
+                        <input type="submit" value='' id="submit" />
+                    </div>
+
+                </div>
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="height-check">
+                            <div id="main-top">
+                                <div class="cloud1"></div>
+                                <div class="cloud2"></div>
+                                <div class="cloud3"></div>
+                                <div id="main-title"></div>
+                            </div>
+                            <div id="main-content">
+                                <div class="white-bg"></div>
+                                <div id="main-content-text"></div>
+                                <div id="main-content-frame">
+                                    <div class="main-content-step" id="main-content-step1"></div>
+                                    <div class="main-content-step" id="main-content-step2"></div>
+                                    <div class="main-content-step" id="main-content-step3"></div>
+                                    <div id="main-arrow1" class="arrow-wrap">
+                                        <div class="arrow1 arrow"></div>
+                                        <div class="arrow2 arrow"></div>
+                                        <div class="arrow3 arrow"></div>
+                                        <div class="arrow4 arrow"></div>
+                                    </div>
+                                    <div id="main-arrow2" class="arrow-wrap">
+                                        <div class="arrow1 arrow"></div>
+                                        <div class="arrow2 arrow"></div>
+                                        <div class="arrow3 arrow"></div>
+                                        <div class="arrow4 arrow"></div>
+                                    </div>
+                                </div>
+                                <div id="main-content-winner"></div>
+                            </div>
+                            <div id="main-policy"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="z-index: 3;">
+                        <div class="height-check">
+                            <div id="big-thumb" class="thumb">
+                                <div id="step2-shadow"></div>
+                            </div>
+                            <div id="reGallery-btn"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="z-index: 3;">
+                        <div class="height-check">
+                            <div id="small-thumb" class="thumb"></div>
+                            <div id="user-info-wrap">
+                                <input type="text" id="name" name="GameID" placeholder="홍길동" class="user-info"
+                                    maxlength="30" />
+                                <input type="tel" id="birth" name="birth" placeholder="2019-12-30" maxlength="10"
+                                    class="user-info" />
+                                <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" maxlength="13"
+                                    class="user-info" />
+                                <input type="email" id="subject" name="subject" placeholder="이메일" class="user-info" />
+                                <textarea name="content" id="content" class="user-info" cols="30" rows="10"
+                                    maxlength="800"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="z-index: 3;">
+                        <div id="complete" class="height-check">
+                            <div id="step5-header">
+                                <div id="step5-air"></div>
+                                <div id="step5-text"></div>
+                                <div id="step5-winner"></div>
+                            </div>
+
+                            <div id="step5-content">
+                                <div id="reload-page"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+    <footer>
+        <div id="D_day-bg">
+            <div id="D_day_wrap">
+                <span id="D_day_text"></span>
+                <span id="D_day_count">0</span>
+            </div>
+
+        </div>
+        <button id="list-btn"></button>
+        <button id="upload-btn" class="upload-btn"></button>
+    </footer>
+    </div>
+
+    <div id="alert">
+        <div id="alert-cancel"></div>
+        <div id="alert-ok"></div>
+    </div>
+
+    <div id="cover"></div>
+
+    <div id="upload-form">
+        <div id="gallery-call"></div>
+        <div id="upload-form-close"></div>
+        <input type="file" id="gallery" class="files" name="bf_file[]" accept=".png, .jpg, .jpeg, .gif, .PNG, .JPG, .JPEG" />
+    </div>
+
+
+    <div id="list-wrap">
+        <ul class="list">
+        </ul>
+        <ul class="paging"></ul>
+    </div>
+    <div id="detail"></div>
+</body>
+
+</html>

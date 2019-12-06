@@ -1,0 +1,367 @@
+@import './mixin.scss';
+
+html {
+    background-color: #f1f1f1;
+}
+
+.white-bg {
+    background-color: #fff;
+}
+
+.d-none {
+    display: none;
+}
+
+#wrapper {
+    @include WH($w: 540px);
+    @include marginPadding($margin: 0 auto);
+    @include background($bgColor: #f1f1f1);
+    overflow: hidden;
+}
+
+#header {
+    @include position($p: fixed, $t: 0, $l: 50%);
+    @include translate($tx: -50%);
+    @include WH($w: 540px, $h: 60px);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/top/header.png),
+        $bgPosition: center 0
+    );
+    z-index: 4;
+    overflow: hidden;
+
+    &.list-active {
+        @include WH($w: 540px, $h: 139px);
+    }
+
+    & #list-header {
+        @include position($p: absolute, $t: 60px, $l: 0);
+        @include WH($w: 540px, $h: 79px);
+        @include background($bgImage: url(../src/images/status/top.png));
+
+        & #close-list {
+            @include position($t: 0px, $l: 0px);
+            @include WH($w: 200px, $h: 60px);
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    @include WH($w: 540px, $h: 140px);
+    @include position($p: fixed, $b: 0, $l: 50%);
+    @include translate($tx: -50%, $ty: 0);
+    z-index: 2;
+
+    & #list-btn {
+        @include position($p: absolute, $t: 30px, $l: 120px);
+        @include WH($w: 214px, $h: 83px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgColor: transparent,
+            $bgImage: url(../src/images/bottom/BT_status.png),
+            $bgPosition: center
+        );
+        cursor: pointer;
+        border: none;
+    }
+
+    & #upload-btn {
+        @include position($p: absolute, $t: 30px, $l: 320px);
+        @include WH($w: 214px, $h: 83px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgColor: transparent,
+            $bgImage: url(../src/images/bottom/BT_upload.png),
+            $bgPosition: center
+        );
+        cursor: pointer;
+        border: none;
+    }
+
+    & #D_day-bg {
+        @include position($p: absolute, $t: 0, $l: 0);
+        @include WH($w: 141px, $h: 140px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgColor: transparent,
+            $bgImage: url(../src/images/bottom/box_D-day.png),
+            $bgPosition: center
+        );
+
+        & #D_day_wrap {
+            width: 113px;
+            margin-top: 70px;
+            margin-left: 14px;
+            text-align: center;
+        }
+
+        & #D_day_text {
+            display: inline-block;
+            @include WH($w: 38px, $h: 23px);
+            @include background(
+                $bgRepeat: no-repeat,
+                $bgColor: transparent,
+                $bgImage: url(../src/images/bottom/D_.png),
+                $bgPosition: center
+            );
+        }
+        & #D_day_count {
+            display: inline-block;
+            @include fontControl($fw: 700, $fs: 31px, $color: #0261b9, $lh: 20px);
+        }
+    }
+}
+
+#alert {
+    @include position($p: fixed, $t: 50%, $l: 50%);
+    @include WH($w: 540px, $h: 235px);
+    @include translate($tx: -50%, $ty: -350%);
+    @include background(
+        $bgImage: url(../src/images/step4/box.png),
+        $bgRepeat: no-repeat,
+        $bgPosition: center
+    );
+    z-index: 3;
+
+    & #alert-cancel {
+        @include position($p: absolute, $t: 150px, $l: 80px);
+        @include WH($w: 180px, $h: 60px);
+        cursor: pointer;
+    }
+
+    & #alert-ok {
+        @include position($p: absolute, $t: 150px, $r: 80px);
+        @include WH($w: 180px, $h: 60px);
+        cursor: pointer;
+    }
+}
+
+#cover {
+    @include position($p: fixed, $t: 0, $l: 50%);
+    @include WH($w: 540px, $h: 100%);
+    @include translate($tx: -50%);
+    @include background($bgColor: rgba(0, 0, 0, 0.9), $bgRepeat: no-repeat, $bgPosition: center);
+    z-index: 2;
+    opacity: 0;
+    display: none;
+}
+
+#main-top {
+    @include position($p: relative, $t: 0, $l: 0);
+    @include WH($w: 540px, $h: 592px);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/main/header/bg.png),
+        $bgPosition: center
+    );
+    margin-top: 60px;
+
+    & #main-title {
+        @include position($p: absolute, $t: 70px, $l: 50%);
+        @include translate($tx: -50%, $ty: 30px);
+        @include WH($w: 365px, $h: 184px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/header/title.png),
+            $bgPosition: center
+        );
+        opacity: 0;
+    }
+
+    & .cloud1 {
+        @include position($p: absolute, $t: 230px, $l: 0);
+        @include translate($tx: -130px);
+        @include WH($w: 128px, $h: 79px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/header/cloud1.png),
+            $bgPosition: center
+        );
+    }
+    & .cloud2 {
+        @include position($p: absolute, $t: 70px, $l: 70px);
+        @include translate($tx: -150px);
+        @include WH($w: 80px, $h: 41px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/header/cloud2.png),
+            $bgPosition: center
+        );
+    }
+    & .cloud3 {
+        @include position($p: absolute, $t: 330px, $l: 300px);
+        @include translate($tx: -360px);
+        @include WH($w: 64px, $h: 39px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/header/cloud3.png),
+            $bgPosition: center
+        );
+    }
+}
+
+#main-content {
+    @include position($p: relative, $t: 0, $l: 0);
+    @include WH($w: 540px, $h: 967px);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgImage: url(../src/images/main/content/bg.png),
+        $bgPosition: center
+    );
+
+    & #main-content-text {
+        @include position($p: absolute, $t: 70px, $l: 50%);
+        @include translate($tx: -50%, $ty: 30px);
+        opacity: 0;
+        @include WH($w: 355px, $h: 191px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/content/text.png),
+            $bgPosition: center
+        );
+    }
+
+    & #main-content-frame {
+        @include position($p: absolute, $t: 330px, $l: 50%);
+        @include translate($tx: -50%);
+        @include WH($w: 480px, $h: 415px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/content/frame.png),
+            $bgPosition: center
+        );
+    }
+
+    & #main-content-winner {
+        @include position($p: absolute, $t: 790px, $l: 50%);
+        @include translate($tx: -50%);
+        @include WH($w: 480px, $h: 95px);
+        @include background(
+            $bgRepeat: no-repeat,
+            $bgImage: url(../src/images/main/content/winner.png),
+            $bgPosition: center
+        );
+    }
+
+    & .white-bg {
+        @include WH($w: 0, $h: 37px);
+        @include position($p: absolute, $t: 63px, $l: 160px);
+    }
+
+    & .main-content-step {
+        @include position($t: 40px);
+        @include WH($w: 179px, $h: 329px);
+        @include background($bgRepeat: no-repeat, $bgPosition: center);
+    }
+
+    & #main-content-step1 {
+        opacity: 0;
+        @include position($l: 5px);
+        @include background($bgImage: url(../src/images/main/content/step01.png));
+    }
+    & #main-content-step2 {
+        @include translate($tx: -30px);
+        opacity: 0;
+        @include position($l: 150px);
+        @include background($bgImage: url(../src/images/main/content/step02.png));
+    }
+    & #main-content-step3 {
+        @include translate($tx: -30px);
+        opacity: 0;
+        @include position($l: 295px);
+        @include background($bgImage: url(../src/images/main/content/step03.png));
+    }
+
+    & .arrow-wrap {
+        @include position($t: 243px);
+    }
+
+    & #main-arrow1 {
+        @include position($l: 134px);
+    }
+    & #main-arrow2 {
+        @include position($l: 280px);
+    }
+
+    & .arrow {
+        @include position($t: 0px);
+        @include WH($w: 9px, $h: 17px);
+        @include background($bgRepeat: no-repeat, $bgPosition: center);
+        opacity: 0;
+    }
+
+    & .arrow1 {
+        @include position($l: 0px);
+        @include background($bgImage: url(../src/images/main/content/next_1.png));
+    }
+    & .arrow2 {
+        @include position($l: 20px);
+        @include background($bgImage: url(../src/images/main/content/next_2.png));
+    }
+    & .arrow3 {
+        @include position($l: 40px);
+        @include background($bgImage: url(../src/images/main/content/next_3.png));
+    }
+    & .arrow4 {
+        @include position($l: 60px);
+        @include background($bgImage: url(../src/images/main/content/next_4.png));
+    }
+}
+
+#main-policy {
+    @include position($p: relative, $t: 0, $l: 50%);
+    @include translate($tx: -50%);
+    @include WH($w: 540px, $h: 600px);
+    @include background(
+        $bgRepeat: no-repeat,
+        $bgColor: #eee,
+        $bgImage: url(../src/images/main/policy/notice.png),
+        $bgPosition: center 50px
+    );
+}
+
+.lds-ring {
+    @include position($p: fixed, $t: 0px, $l: 50%);
+    @include translate($tx: -50%);
+    @include WH($w: 540px, $h: 100%);
+    @include background($bgColor: #fff);
+    display: none;
+    z-index: 3;
+
+    div {
+        @include position($t: 250px, $r: 45%);
+        @include WH($w: 51px, $h: 51px);
+        border: 6px solid #fff;
+        border-radius: 50%;
+        box-sizing: border-box;
+        @include marginPadding($margin: 6px);
+        display: block;
+
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: #00a0e9 transparent transparent transparent;
+
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+    }
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,54 @@
+@mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
+    position: $p;
+    top: $t;
+    bottom: $b;
+    left: $l;
+    right: $r;
+}
+
+@mixin translate($tx: null, $ty: null) {
+    @if $ty==null and $tx !=null {
+        transform: translateX($tx);
+    }
+
+    @if $ty !=null and $tx==null {
+        transform: translateY($ty);
+    }
+
+    @if $ty !=null and $tx !=null {
+        transform: translate($tx, $ty);
+    }
+}
+
+@mixin WH($w: null, $h: null) {
+    width: $w;
+    height: $h;
+}
+
+@mixin fontControl(
+    $fs: null,
+    $fw: null,
+    $lh: null,
+    $textAlign: null,
+    $textDecoration: null,
+    $color: null
+) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    text-align: $textAlign;
+    text-decoration: $textDecoration;
+    color: $color;
+}
+
+@mixin marginPadding($margin: null, $padding: null) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin background($bgColor: null, $bgRepeat: null, $bgImage: null, $bgPosition: null) {
+    background-color: $bgColor;
+    background-repeat: $bgRepeat;
+    background-image: $bgImage;
+    background-position: $bgPosition;
+}
