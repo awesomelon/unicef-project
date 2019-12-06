@@ -1,14 +1,14 @@
 import { getOne } from './util';
 
 class Dday {
-	constructor() {
-		this.setVars();
-	}
+	private D_day: any;
+	private endDay: Date;
+	private now: Date;
 
-	setVars() {
-		this.D_day = getOne('#D_day_count');
-		this.endDay = new Date('December 25, 2019 00:00:00'); //디데이
-		this.now = new Date();
+	constructor(D_day: any, endDay: Date, now: Date) {
+		this.D_day = D_day;
+		this.endDay = endDay;
+		this.now = now;
 	}
 
 	countDay() {
@@ -26,4 +26,8 @@ class Dday {
 	}
 }
 
-export const dday = new Dday();
+export const dday = new Dday(
+	getOne('#D_day_count'),
+	new Date('December 25, 2019 00:00:00'),
+	new Date()
+);
