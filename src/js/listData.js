@@ -93,7 +93,7 @@ class ListData {
 		this.createItems(Array.from(text));
 	}
 
-	closeListOnClick = () => {
+	closeListOnClick() {
 		this.closeList.addEventListener('click', () => {
 			elShow(this.wrapper);
 			elHide(this.listWrap);
@@ -101,7 +101,7 @@ class ListData {
 			tweenEvent.cloudMotionResume();
 			tweenEvent.footerShow();
 		});
-	};
+	}
 
 	// 검색해온 리스트 데이터로 참여 현황 DOM 생성
 	createItems(target) {
@@ -174,9 +174,7 @@ class ListData {
 		const doc = new DOMParser().parseFromString(data, 'text/html').body.firstElementChild;
 		this.detail.appendChild(doc);
 
-		getOne('#detail-in-upload-btn').addEventListener('click', () =>
-			tweenEvent.uploadFormShow()
-		);
+		getOne('#detail-in-upload-btn').addEventListener('click', () => tweenEvent.uploadFormShow());
 		getOne('#close-detail').addEventListener('click', _ => this.detailClose());
 
 		getOne('#bo_v_img img').onload = () => {

@@ -1,4 +1,4 @@
-import 'swiper/css/swiper.min.css';
+import 'swiper/dist/css/swiper.min.css';
 import './index.scss';
 import { listData } from './js/listData';
 import { tweenEvent } from './js/tweenEvent';
